@@ -15,7 +15,14 @@ const server = http.createServer((req, res) => {
   console.log(1);
   console.log(url);
   console.log("1111111111");
-  if (url === "/ajax302") {
+  if (url === "/error") {
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify({ data: 123, success: false, va: "中国" }));
+  } else if (url === "/500") {
+    res.statusCode = 500;
+    res.setHeader("Content-Type", "text/plain");
+    res.end("server error");
+  } else if (url === "/ajax302") {
     res.writeHead(302, {
       location: "/", //"http://up.gcp-it.zetyun.cn/", //
     });
