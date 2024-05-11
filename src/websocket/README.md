@@ -33,3 +33,7 @@
   }
 
   ```
+
+  - websocket 请求和 Http 请求一样，通过 location 被 Nginx 代理。
+
+  - HTTP 服务和 WebSocket 服务可以由同一个服务器应用程序提供，运行在同一个端口上。参考：`socketAndHttpSameServer`
